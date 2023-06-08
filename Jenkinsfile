@@ -11,15 +11,15 @@ pipeline {
         stage("Building ...") {
             steps {
                 sh 'curl -O https://bootstrap.pypa.io/get-pip.py'
-                sh 'python get-pip.py --user'
-                sh 'python -m pip install --user pytest'
-                sh 'python http_e.py'
+                sh 'python3 get-pip.py --user'
+                sh 'python3 -m pip install --user pytest'
+                sh 'python3 http_e.py'
             }
         }
 
         stage("Testing ...") {
             steps {
-                sh 'python -m pytest TestRest.py'
+                sh 'python3 -m pytest TestRest.py'
             }
         }
     }
