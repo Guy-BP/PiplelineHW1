@@ -22,5 +22,11 @@ pipeline {
                 sh 'python3 -m pytest TestRest.py'
             }
         }
+
+        stage("Docker image") {
+            steps {
+                sh 'docker build -t "image:v1" .'
+            }
+        }
     }
 }
