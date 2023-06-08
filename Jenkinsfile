@@ -12,9 +12,15 @@ pipeline{
                 sh 'python3 http_e.py'
             }
         }
+        stage('Install Dependencies') {
+            steps {
+                sh 'pip install pytest'
+            }
+        }
+
         stage("testing ..."){
             steps{
-                sh 'pytest TestRest.py'
+                sh 'python3 TestRest.py'
             }
         }
     }
