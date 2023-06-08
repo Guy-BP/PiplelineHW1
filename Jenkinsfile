@@ -10,10 +10,10 @@ pipeline {
 
         stage("Building ...") {
             steps {
-                sh 'python3 http_e.py'
                 sh 'curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py'
                 sh 'python3 get-pip.py'
                 sh 'pip install pytest'
+                sh 'python3 http_e.py'
             }
         }
 
