@@ -11,6 +11,7 @@ pipeline {
         stage("Building ...") {
             steps {
                 sh 'python3 http_e.py'
+                sh 'python3 -m ensurepip --upgrade'
                 sh 'pip install pytest'
             }
         }
